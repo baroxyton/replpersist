@@ -23,3 +23,31 @@ if set it's called when the database is uploaded automatically or manually. The 
 resets the whole database.
 #### `myDB.upload()`
 to manaully upload the database, independent of the automatic uploading cycle. Call after storing important data. The database will upload automatically once all 2 minutes or any other value that has been set when creating the database.
+### additional array functions
+intended to use on `myDB.data`, but can be used on any array.
+#### `array.add(name,value)`
+adds/pushes the following object:
+    {
+    "name":name,
+    "content":value
+    }
+#### `array.addCustom(nameProp,contentObj)`
+will add/push contentObj if there's no other object with the name value of nameProp. If duplicates don't matter, use javascript's normal `array.push`.
+#### `array.clear()`
+empties array
+#### `array.del(delname)`
+deletes object with the property name being `delname`. For instance, if you have the array `[{name:"test"}]` you can delete the object by using `array.del("test")`
+#### `array.delCustom(nameProp,nameValue)`
+deletes object with the property `nameProp` having the value of `nameValue`. For instance, if you have the array `[{someProp:"hello world"}]` you can delete it by using `delCustom("someProp","hello world")`
+#### `array.delItem(item)`
+if you know what the value of the item you want to delete is, you can use this function. If you have the array `["delete","the","second","item"]` you can call `array.delItem("the")` to remove the second item.
+#### `array.f(nameValue)`
+same as `array.del`, but it returns the found item instead of deleting it
+#### `array.fAll(nameProp,nameVal)`
+same as `array.fCustom`, but it returns a list of all found elements instead of just the first one
+#### `array.fCustom(nameProp,nameVal)`
+same as `array.delCustom`, but it returns the item instead of deleting it
+#### `array.fi(nameVaö)`
+same as `array.f`, but only returns the index
+#### `array.fiCustom(nameProp,nameVal)`
+same as `array.fCustom`, but only returns index
