@@ -1,10 +1,11 @@
 # replpersist
 ## About
-replpersist is a nodeJS database client for https://repl.it
+replpersist is a nodeJS database client for the new databases of the online-IDE https://repl.it
 ## why to use replpersist?
 - it's sync. You don't need to restructure your whole code and an async function around it.
-- it's super leightweight. It only takes up 5kb unpacked and 1.9kb packed. In fact, it got 10% leighter in the last update. In conparison, replits official node database client is 180kb
-- it's lightning fast. You don't need to `await` any time, the data is cached
+- it's super leightweight. It only takes up 5kb unpacked and 1.9kb packed. In fact, it got 10% leighter in the latest update. In conparison, replits official node database client is 180kb, and this documentation is 3kb+
+- it's lightning fast. You don't need to `await` a half second any time you try to read a persons username, the data is cached and can be accessed in a fraction of a millisecond like a normal object.
+- high level. You don't need to worry about forgetting to url encode the data and messing your database up.
 ## Documentation
 ### Import module
 Import the module like this: `const Database = require("replpersist");`
@@ -27,7 +28,7 @@ to manaully upload the database, independent of the automatic uploading cycle. C
 intended to use on `myDB.data`, but can be used on any array.
 #### `array.add(name,value)`
 adds/pushes the following object:
-    ```JSON{
+    ```{
     "name":name,
     "content":value
     }```
@@ -51,3 +52,4 @@ same as `array.delCustom`, but it returns the item instead of deleting it
 same as `array.f`, but only returns the index
 #### `array.fiCustom(nameProp,nameVal)`
 same as `array.fCustom`, but only returns index
+## Thanks for reading!
