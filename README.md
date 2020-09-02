@@ -2,6 +2,7 @@
 ## About
 replpersist is a nodeJS database client for the new databases of the online-IDE https://repl.it
 ## why to use replpersist?
+- no subdependencies
 - it's sync. You don't need to restructure your whole code and an async function around it.
 - it's super leightweight. It only takes up 3.45kb unpacked and 1.6kb packed. In fact, it got 29% leighter in the latest update. In comprison, this documentation alone is 3.37kb+
 - it's lightning fast. You don't need to `await` a half second any time you try to read a persons username, the data is cached and can be accessed in a fraction of a millisecond like a normal object.
